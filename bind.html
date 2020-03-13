@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>bind函数</title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			Function.prototype.bind1 = function(){
+				//参数拆解为数组
+				const args = Array.prototype.slice.call(arguments);
+				//获取数组的第一项
+				const t = args.shift();
+				//将this 赋值给调用该函数的调用者
+				const self = this;
+				//返回一个函数
+				return function(){
+					return self.apply(t,args);
+				}
+			}
+			function fn1(a,b,c){
+				console.log(this,'this');
+				console.log(a,b,c)
+				return 'this is fn1'
+			}
+			let fn2 = fn1.bind1({x:100},1,2,3);
+			let res = fn2();
+			console.log(res)
+		</script>
+	</body>
+</html>

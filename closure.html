@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>闭包</title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			// function a1(){
+			// 	let a = 100;
+			// 	return function(){
+			// 		console.log(a)
+			// 	}
+			// }
+			// a = 200;
+			// let a2 = a1();
+			// a2();
+			
+			// function fnc(fn){
+			// 	let a = 100;
+			// 	fn();
+				
+			// }
+			// let a = 200;
+			// function f2(){
+			// 	console.log(a)
+			// }
+			// fnc(f2)
+			
+			function createCache(){
+				const data = {}
+				return {
+					set:function(key,val){
+						data[key] = val;
+					},
+					get:function(key,val){
+						return data[key]
+					}
+				}
+			}
+			let c = createCache();
+			c.set('a',1);
+			c.get('a')
+			console.log(c.get('a'))
+			
+		</script>
+	</body>
+</html>

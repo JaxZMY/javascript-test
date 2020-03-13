@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>随便的例子</title>
+	</head>
+	<body>
+		<p>1</p>
+		<p>2</p>
+		<p>3</p>
+		<script type="text/javascript">
+			// var x = 20;
+			// var a = {
+			// 	x: 15,
+			// 	fn: () => {
+			// 		var x = 30;
+			// 		return function() {
+			// 			return this.x;
+			// 		};
+			// 	}
+			// };
+			// console.log((a.fn())()); // 20
+			// console.log(a.fn()()); //20
+			// console.log(a.fn().call(this)); //20
+			// console.log(a.fn().call(a)); //15
+			class Jquery{
+				constructor(selector){
+					let result = document.querySelectorAll(selector);
+					let length = result.length;
+					for(let i = 0;i<length;i++){
+						this[i] =  result[i]
+					}
+					this.selector = selector;
+					this.length = length;
+					
+				}
+				get(index){
+					console.log(this[index].tagName)
+				}
+				each(fn){
+					for(let i = 0;i<this.length;i++){
+						const ele = this[i]
+						fn(ele)
+					}
+				}
+				addClass(className){
+					return this.each(ele =>{
+						ele.classList.add(className)
+					})
+				}
+			}
+			let p = new Jquery('p');
+			p.get(2);
+			p.addClass('a1')
+			
+			let oldArr = [1,1,1,2,2,2,3,3,3,];
+			let arr2 = [...new Set(oldArr)];
+			console.log(arr2)
+		</script>
+	</body>
+</html>

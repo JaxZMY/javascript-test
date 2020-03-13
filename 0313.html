@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			let a; //undefined
+			let b = '1111';//string
+			let c = 2222;//number
+			let d = true;//boolean
+			let e = Symbol('e');//Symbol
+			let f = {
+				name:'1322',
+				type:[1,1,2,3,4],
+				zuzhi:{
+					xiashu:{
+						keshi:'前端'
+					}
+				}
+			}	// object
+			let g = [1,2,3,4,5]; //array
+			let h = null; // object
+			let i = function(){ //function
+				console.log(1231231231)
+			}
+			let deepClone = function (obj){
+				if(typeof obj !== 'object' || typeof obj == null){
+					return obj
+				}
+				let result;
+				if(obj instanceof Array){
+					result = [];
+				}else{
+					result = {};
+				}
+				
+				for(let key in obj){
+					if(obj.hasOwnProperty(key)){
+						result[key] = deepClone(obj[key])
+					}
+				}
+				return result
+			}
+			let j = deepClone(f);
+			console.log(j)
+			//自由变量是在定义的地方向上查找找到就立刻返回
+			// this的指向实在函数执行时确定的
+			function zzz(){
+				console.log(this) //window
+			}
+			(()=>{
+				console.log(this) //永远指向上一级作用域
+			})
+			class Student{
+				constructor(name,number){
+					this.name = name;
+				}
+			}
+			let k = new Student();//class中指向new关键字创建的变量
+			
+			function l(m){
+				let n = m;
+				return function(){
+					return n
+				}
+			}
+			
+			
+			for(var m = 0;m<10;m++){
+				let o = l(m);
+				var q = document.createElement('div');
+				q.innerHTML = '<p>'+o()+'</p>'
+				document.body.appendChild(q)
+				// console.log(o())
+			}
+			for(let r=11;r<20;r++){
+				let s = document.createElement('div');
+				s.innerHTML = r;
+				document.body.appendChild(s)
+			}
+		</script>
+	</body>
+</html>

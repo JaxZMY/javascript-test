@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			let a = {
+				age:20,
+				type:[1,2,3,4],
+				opt:function(){
+					console.log(1111)
+				}
+			};
+			function deepClone(obj){
+				if(typeof obj !=='object' || typeof obj == null){
+					return obj
+				}
+				let cloneobj;
+				if(obj instanceof Array){
+					cloneobj = [];
+				}else{
+					cloneobj = {};
+				}
+				for(let key in obj){
+					if(obj.hasOwnProperty(key)){
+						cloneobj[key] = deepClone(obj[key])
+					}
+				}
+				return cloneobj;
+			}
+			let b = deepClone(a);
+			b.opt = function(){
+				console.log('修改')
+			}
+			
+			console.log(b)
+			b.opt();
+			a.opt();
+		</script>
+	</body>
+</html>

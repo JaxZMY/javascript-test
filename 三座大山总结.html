@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>三座大山总结</title>
+	</head>
+	<body>
+		<p>1</p>
+		<p>2</p>
+		<p>3</p>
+		<span>1</span>
+		<span>2</span>
+		<span>3</span>
+		<script type="text/javascript">
+			// 原型与原型链
+			// let a = {
+			// 	name:'1111',
+			// 	type:[1,2,3,4,5],
+			// 	sayhi:function(){
+			// 		console.log(1121231)
+			// 	}
+			// }
+
+			// // 深拷贝
+			// function deepClone(obj){
+			// 	if(typeof obj !== 'object' || typeof obj == null){
+			// 		return obj
+			// 	}
+			// 	let result;
+			// 	if(obj instanceof Array){
+			// 		result = []
+			// 	}else{
+			// 		result = {}
+			// 	}
+			// 	for(let key in obj){
+			// 		if(obj.hasOwnProperty(key)){
+			// 			result[key] = deepClone(obj[key])
+			// 		}
+			// 	}
+			// 	return result
+			// }
+			// let b = deepClone(a)
+			// console.log(b)
+			// 	function a() {
+			// 		let i = 1;
+
+			// 		return function() {
+			// 			return b
+			// 		}
+			// 	}
+			//闭包
+			// 	let c = a();
+			// 	console.log(c())
+			// for(var i = 0;i<10;i++){
+			// 	var d = document.createElement('div');
+			// 	function a(i){
+			// 		var b = i;
+			// 		return function(){
+			// 			return b
+			// 		}
+			// 	}
+			// 	d.innerHTML = `<p>${i}</p>`
+			// 	document.body.appendChild(d)
+			// }
+			//继承
+			class Jquery {
+				constructor(selector) {
+					let result = document.querySelectorAll(selector);
+					let length = result.length;
+					for (let i = 0; i < length; i++) {
+						this[i] = result[i]
+					}
+					this.selector = selector
+					this.length = length;
+					// this.index = 
+				}
+				get(index) {
+					return this[index]
+				}
+				each(fn) {
+					for (let i = 0; i < this.length; i++) {
+						let ele = this[i];
+						fn(ele, i)
+					}
+				}
+
+			}
+			let p = new Jquery('p');
+			// console.log(p.get(2))
+			p.each(function(ele, i) {
+				console.log(arguments[0])
+				arguments[0].innerHTML = `${i}dd`
+			})
+			class my extends Jquery {
+				constructor(selector) {
+					super(selector)
+				}
+				on(type, fn) {
+					return this.each(ele => {
+						ele.addEventListener(type,fn,false)
+					})
+				}
+			}
+			let p2 = new my('span')
+			p2.on('click',(ele)=>{
+				alert(1231)
+			})
+		</script>
+	</body>
+</html>

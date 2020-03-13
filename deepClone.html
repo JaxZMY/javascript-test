@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>深拷贝</title>
+	</head>
+	<body>
+		<div id="root">
+		深拷贝
+		</div>
+		<!-- <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script> -->
+		<script type="text/javascript">
+			
+			let a = {
+				age:20,
+				type:[1,2,3,4],
+				address:{
+					city:'beijing'
+				}
+			}
+			let d2 = deepClone(a);
+			d2.address.city = 'qianan'
+			console.log(d2.address.city);
+			console.log(a.address.city);
+			
+			function deepClone(obj){
+				// 接收参数不是对象或者数组或者直接是null
+				if(typeof obj !== 'object' || typeof obj == null){
+					//直接返回对象
+					return obj
+				}
+				let result;
+				if(obj instanceof Array){
+					///
+					result = []
+				}else{
+					result = {}
+				}
+				for(var key in obj){
+					if(obj.hasOwnProperty(key)){
+						result[key] = deepClone(obj[key]);
+					}
+					
+				}
+				
+				
+				return result
+				
+				
+			}
+		
+			var bla = {
+				age:1
+			}
+			var blb = bla;
+			blb.age=2;
+			let blc = 1;
+			let bld = blc;
+			bld = 2;
+			console.log(blb.age)
+			console.log(bla.age)
+			console.log(blc,'c')
+			console.log(bld,'d')
+		</script>
+	</body>
+</html>

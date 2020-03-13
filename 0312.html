@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			let a = {
+				age:20,
+				type:[1,2,2,3]
+			}
+			let deepClone = function(obj){
+				if(typeof obj !=='object' || typeof obj == null){
+					return obj
+				}
+				let result
+				if(obj instanceof Array){
+					result = []
+				}else{
+					result = {}
+				}
+				for(let key in obj){
+					if(obj.hasOwnProperty(key)){
+						result[key] = deepClone(obj[key])
+					}
+				}
+				return result
+			}
+			let b = deepClone(a);
+			console.log(b);
+			
+		
+			class People{
+				constructor(name,number){
+					this.name = name;
+					this.number = number;
+				}
+				sayhi(){
+					console.log(`${this.name}hihihi`)
+				}
+			}
+			class Student extends People{
+				constructor(name,number){
+					super(name)
+					this.number = number;
+				}
+				sdy(){
+					console.log(`${this.name}学习`)
+				}
+			}
+			let classA = new Student('dksdj',123123123);
+			classA.sdy()
+			classA.sayhi()
+			
+			function bibao(){
+				let bibaoa = 1;
+				return function(){
+					console.log(bibaoa)
+				}
+			}
+			let bibaoa =2;
+			let bibaobl = bibao();
+			bibaobl();
+		</script>
+	</body>
+</html>
