@@ -23,39 +23,152 @@
 			// console.log(a.fn()()); //20
 			// console.log(a.fn().call(this)); //20
 			// console.log(a.fn().call(a)); //15
-			class Jquery{
-				constructor(selector){
-					let result = document.querySelectorAll(selector);
-					let length = result.length;
-					for(let i = 0;i<length;i++){
-						this[i] =  result[i]
-					}
-					this.selector = selector;
-					this.length = length;
-					
-				}
-				get(index){
-					console.log(this[index].tagName)
-				}
-				each(fn){
-					for(let i = 0;i<this.length;i++){
-						const ele = this[i]
-						fn(ele)
-					}
-				}
-				addClass(className){
-					return this.each(ele =>{
-						ele.classList.add(className)
-					})
-				}
-			}
-			let p = new Jquery('p');
-			p.get(2);
-			p.addClass('a1')
+			// class Jquery{
+			// 	constructor(selector){
+			// 		let result = document.querySelectorAll(selector);
+			// 		let length = result.length;
+			// 		for(let i = 0;i<length;i++){
+			// 			this[i] =  result[i]
+			// 		}
+			// 		this.selector = selector;
+			// 		this.length = length;
+
+			// 	}
+			// 	get(index){
+			// 		console.log(this[index].tagName)
+			// 	}
+			// 	each(fn){
+			// 		for(let i = 0;i<this.length;i++){
+			// 			const ele = this[i]
+			// 			fn(ele)
+			// 		}
+			// 	}
+			// 	addClass(className){
+			// 		return this.each(ele =>{
+			// 			ele.classList.add(className)
+			// 		})
+			// 	}
+			// }
+			// let p = new Jquery('p');
+			// p.get(2);
+			// p.addClass('a1')
+
+			// let oldArr = [1,1,1,2,2,2,3,3,3,];
+			// let arr2 = [...new Set(oldArr)];
+			// console.log(arr2)
+			// function deepClone(obj) {
+			// 	if (typeof obj !== 'obj' || typeof obj == null) {
+			// 		return obj
+			// 	}
+			// 	let result
+			// 	if (obj instanceof Array) {
+			// 		result = []
+			// 	} else {
+			// 		result = {}
+			// 	}
+			// 	for (let key in obj) {
+			// 		if (obj.hasOwnProperty(key)) {
+			// 			result[key] = deepClone(obj[key])
+			// 		}
+			// 	}
+			// 	return result
+			// }
+			// let a = {
+			// 	name: '12121',
+			// 	type: [1, 2, 3, 4]
+			// }
+			// let b = deepClone(a)
+			// console.log(b)
+			// class Jquery {
+			// 	constructor(selector) {
+			// 		let result = document.querySelectorAll(selector)
+			// 		let length = result.length
+			// 		for (let i = 0; i < result.length; i++) {
+			// 			this[i] = result[i]
+			// 		}
+			// 		this.selector = selector
+			// 		this.length = length
+			// 	}
+			// 	get(index) {
+			// 		return this[index]
+			// 	}
+			// 	each(fn) {
+			// 		for (let i = 0; i < this.length; i++) {
+			// 			let ele = this[i]
+			// 			fn(ele)
+			// 		}
+			// 	}
+			// }
+			// let $p = new Jquery('p');
+			// $p.each(function(){
+			// 	console.log(2222)
+			// })
+			// console.log($p.get(2))
+			// function quchong(arr){
+			// 	return Array.from(new Set(arr))
+				
+			// }
+			// var arr = [1,1,'true','true',true,true,15,15,false,false, undefined,undefined, null,null, NaN, NaN,'NaN', 0, 0, 'a', 'a',{},{}];
+			// console.log(quchong(arr))
+			// var x = 20;
+			// var a = {
+			// 	x: 15,
+			// 	type:[1,2,3]
+			// };
+			// function deepClone(obj){
+			// 	if(typeof obj !== 'object' || typeof obj == null){
+			// 		return obj
+			// 	}
+			// 	let result
+			// 	if(obj instanceof Array){
+			// 		result = []
+			// 	}else{
+			// 		result = {}
+			// 	}
+			// 	for(let key in obj){
+			// 		if(obj.hasOwnProperty(key)){
+			// 			result[key] = deepClone(obj[key])
+			// 		}
+			// 	}
+			// 	return result
+			// }
+			// let b = deepClone(a)
+			// console.log(b)
+			// class A1{
+			// 	constructor(name,number){
+			// 		this.name = name;
+			// 		this.number = number;
+			// 	}
+			// 	sayhi(){
+			// 		console.log(`${this.name}hihihihi`)
+			// 	}
+			// }
+			// class A2 extends A1{
+			// 	constructor(name,number){
+			// 		super(name)
+			// 		this.number = number
+			// 	}
+			// 	stu(){
+			// 		console.log(`${this.name}xuexi`)
+			// 	}
+			// }
+			// let obj1 = new A2('ming',234)
+			// obj1.sayhi()
+			// obj1.stu()
+			var arr = [1,2,3,4,5]
+			Math.max(...arr)
+			var arr2 = [1,1,1,1,12,3,3,3,3,55,5,66,0,7,6,6,]
+			let arr3 = [...new Set(arr2)]
 			
-			let oldArr = [1,1,1,2,2,2,3,3,3,];
-			let arr2 = [...new Set(oldArr)];
-			console.log(arr2)
+			
+			
+			// state
+			//	
+			// mutations
+			// actions	
+			// Getters
+			
+			
 		</script>
 	</body>
 </html>

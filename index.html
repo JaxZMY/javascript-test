@@ -10,25 +10,29 @@
 		</div>
 		<!-- <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script> -->
 		<script type="text/javascript">
-			let a;
-			let str= '21323131';
-			let b = true;
-			let n = 123;
-			let s = Symbol('s');
-			let obj = {a:1};
-			let arr = [1,2,2,3];
-			let nu = null;
-			let fun = function (){}
-			console.log(typeof a);//undefined;
-			console.log(typeof str)//string;
-			console.log(typeof b)//boolean;
-			console.log(typeof n)//number;
-			console.log(typeof s)//Symbol;
-			console.log(typeof obj)//object;
-			console.log(typeof arr)//object;
-			console.log(typeof nu)//object;
-			console.log(typeof fun)//function;
-			
+			// let a;
+			// let str= '21323131';
+			// let b = true;
+			// let n = 123;
+			// let s = Symbol('s');
+			// let obj = {a:1};
+			// let arr = [1,2,2,3];
+			// let nu = null;
+			// let fun = function (){}
+			// console.log(typeof a);//undefined;
+			// console.log(typeof str)//string;
+			// console.log(typeof b)//boolean;
+			// console.log(typeof n)//number;
+			// console.log(typeof s)//Symbol;
+			// console.log(typeof obj)//object;
+			// console.log(typeof arr)//object;
+			// console.log(typeof nu)//object;
+			// console.log(typeof fun)//function;
+			for(var i  = 0;i<5;i++){
+				setTimeout(function(){
+					console.log('delayer:'+i)
+				},0)
+			}
 		</script>
 	</body>
 </html>
