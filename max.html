@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>比较最大值</title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			function max() {
+				let num = arguments;
+				let max = 0;
+				num = Array.prototype.slice.call(arguments)
+
+				num.forEach(n => {
+					if (n > max) {
+						max = n
+					}
+				})
+				return max
+			}
+			console.log(max(1,2,3))
+			function maxArr(arr){
+				let max = 0
+				arr.forEach(n=>{
+					if(n>max){
+						max = n
+					}
+				})
+				return max
+			}
+			console.log(maxArr([4,5,6,6,99]))
+		</script>
+	</body>
+</html>
