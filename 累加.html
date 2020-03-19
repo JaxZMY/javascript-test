@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>累加</title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			// let a = 0;
+			// for (let i = 1; i <= 100; i++) {
+			// 	a = a + i
+			// }
+			// console.log(a)
+			let str = ""
+			for (let a = 1; a <= 9; a++) {
+				for (let b = 1; b <= a; b++) {
+					str += `${b}*${a}=${a*b},`;
+
+				}
+				str += `\n`;
+			}
+			console.log(str)
+		</script>
+	</body>
+</html>
