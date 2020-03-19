@@ -1,70 +1,71 @@
 <!DOCTYPE html>
 <html>
-	<head>
-		<meta charset="utf-8">
-		<title>Promise</title>
-	</head>
-	<body>
-		<script type="text/javascript">
-			const url1 =
-				`https://img2.sycdn.imooc.com/5bd5cb880001381607410553-140-140.jpg`;
-			const url2 =
-				`https://img1.sycdn.imooc.com/szimg/5e3cfea008e9a61b06000338-358-201.jpg`;
-			// let loadImg = function(src) {
-			// 	const pro = new Promise(
-			// 		(resolve, reject) => {
-			// 			const img = document.createElement('img');
-			// 			img.onload = () => {
-			// 				resolve(img);
-			// 			}
-			// 			img.onerror = () => {
-			// 				const err = new Error(`图片加载失败 ${src}`)
-			// 				reject(err)
-			// 			}
-			// 			img.src = src
-			// 			document.body.appendChild(img)
-			// 		}
-			// 	)
-			// 	return pro
 
-			// }
-			// loadImg(url1).then(img => {
-			// 	console.log(img.width)
-			// 	img.style.width = `200px`;
-			// 	return img  //返回img
-			// }).then(img1=>{//指向上个.then的return值
-			// 	console.log(img1);
-			// 	return loadImg(url2)//返回一个新的Promise
-			// }).then(img2=>{
-			// 	console.log(img2);
-				
-			// })
-			let loadImg = function(src){
-				const pro = new Promise(
-					(resolve,reject)=>{
-						const img = document.createElement('img')
-						img.onload = () =>{
-							resolve(img);
-						}
-						img.onerror = () =>{
-							const err = new Error('图片加载失败')
-						}
-						img.src = src
-						document.body.appendChild(img)
+<head>
+	<meta charset="utf-8">
+	<title>Promise</title>
+</head>
+
+<body>
+	<script type="text/javascript">
+		const url1 =
+			`https://img2.sycdn.imooc.com/5bd5cb880001381607410553-140-140.jpg`;
+		const url2 =
+			`https://img1.sycdn.imooc.com/szimg/5e3cfea008e9a61b06000338-358-201.jpg`;
+		// let loadImg = function(src) {
+		// 	const pro = new Promise(
+		// 		(resolve, reject) => {
+		// 			const img = document.createElement('img');
+		// 			img.onload = () => {
+		// 				resolve(img);
+		// 			}
+		// 			img.onerror = () => {
+		// 				const err = new Error(`图片加载失败 ${src}`)
+		// 				reject(err)
+		// 			}
+		// 			img.src = src
+		// 			document.body.appendChild(img)
+		// 		}
+		// 	)
+		// 	return pro
+
+		// }
+		// loadImg(url1).then(img => {
+		// 	console.log(img.width)
+		// 	img.style.width = `200px`;
+		// 	return img  //返回img
+		// }).then(img1=>{//指向上个.then的return值
+		// 	console.log(img1);
+		// 	return loadImg(url2)//返回一个新的Promise
+		// }).then(img2=>{
+		// 	console.log(img2);
+
+		// })
+		let loadImg = function (src) {
+			const pro = new Promise(
+				(resolve, reject) => {
+					const img = document.createElement('img');
+					img.onload = () => {
+						resolve(img);
 					}
-				)
-				return pro
-			}
-			loadImg(url1).then(img=>{
-				console.log(img.width)
-				return img
-			}).then(img1=>{
-				console.log(img1)
-				return loadImg(url2)
-			}).then(img2=>{
-				console.log(img2)
-				return img2
-			})
-		</script>
-	</body>
+					img.onerror = () => {
+						let err = new Error(`图片加载失败${src}`)
+						reject(err)
+					}
+					img.src = src
+				}
+
+			)
+			return pro
+		}
+		loadImg(url1).then(img => {
+			document.body.appendChild(img)
+			return loadImg(url2)
+		}).then(img2 =>{
+			document.body.appendChild(img2)
+			return img2
+		})
+	</script>
+</body>
+
 </html>

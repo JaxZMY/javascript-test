@@ -1,16 +1,46 @@
 <!DOCTYPE html>
 <html>
-	<head>
-		<meta charset="utf-8">
-		<title>手写jquery</title>
-	</head>
-	<body>
-		<p>1</p>
-		<p>2</p>
-		<p>3</p>
-		<span>4</span>
-		<span>5</span>
-		<span>6</span>
-		<script src="js/jquery.js" type="text/javascript" charset="utf-8"></script>
-	</body>
+
+<head>
+	<meta charset="utf-8">
+	<title>手写jquery</title>
+</head>
+
+<body>
+	<p>1</p>
+	<p>2</p>
+	<p>3</p>
+	<span>4</span>
+	<span>5</span>
+	<span>6</span>
+	<!-- <script src="js/jquery.js" type="text/javascript" charset="utf-8"></script> -->
+	<script type="text/javascript">
+		class Jquery {
+			constructor(selector) {
+				let result = document.querySelectorAll(selector);
+				let length = result.length;
+				for (let i = 0; i < length; i++) {
+					this[i] = result[i]
+				}
+				this.selector = selector;
+				this.length = length;
+			}
+			get(index) {
+				return this[index]
+			}
+			each(fn) {
+				for (let i = 0; i < this.length; i++) {
+					let ele = this[i]
+					fn(ele)
+				}
+			}
+		}
+		let $p = new Jquery('p')
+		console.log($p.get(2))
+		$p.each(function(){
+			console.log(222)
+		})
+	</script>
+</body>
+
 </html>

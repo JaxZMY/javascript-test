@@ -155,26 +155,50 @@
 			// let obj1 = new A2('ming',234)
 			// obj1.sayhi()
 			// obj1.stu()
-			var arr = [1,1,1,1,12,3,3,3,3,55,5,66,0,7,6,6,]
-			// Math.max(...arr)
-			// var arr2 = [1,1,1,1,12,3,3,3,3,55,5,66,0,7,6,6,]
-			// let arr3 = [...new Set(arr2)]
-			for (let i = 0;i<arr.length;i++){
-				for(let j = i+1;j<arr.length;j++){
-					if(arr[i] === arr[j]){
-						arr.splice(j,1)
-						j--
-					}
-				}
-			}
-			console.log(arr)
+			// var arr = [1,1,1,1,12,3,3,3,3,55,5,66,0,7,6,6,]
+			// // Math.max(...arr)
+			// // var arr2 = [1,1,1,1,12,3,3,3,3,55,5,66,0,7,6,6,]
+			// // let arr3 = [...new Set(arr2)]
+			// for (let i = 0;i<arr.length;i++){
+			// 	for(let j = i+1;j<arr.length;j++){
+			// 		if(arr[i] === arr[j]){
+			// 			arr.splice(j,1)
+			// 			j--
+			// 		}
+			// 	}
+			// }
+			// console.log(arr)
 			
 			// state
 			//	
 			// mutations
 			// actions	
 			// Getters
-			
+			function deepClone(obj){
+				if(typeof obj !=='object'|| typeof obj == null){
+					return obj
+				}
+				let result;
+				if(obj instanceof Array){
+					obj = []
+				}else{
+					obj = {}
+				}
+				for(let key in obj){
+					if(obj.hasOwnProperty(key)){
+						result[key] = deepClone(obj[key])
+					}
+				}
+				return obj
+			}
+			let a = {
+				a1:'22313',
+				a2:{
+					a3:'333333'
+				}
+			}
+			let b = deepClone(a);
+			console.log(b)
 			
 		</script>
 	</body>
