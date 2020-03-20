@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			// let arr = 'iiioooopp';
+			
+			//arr.push() 接收一个或多个参数，在数组末尾插入参数个元素，返回添加后的数组长度
+			//arr.pop() 不接受参数在数组末尾删除元素，返回被删除的元素
+			//arr.shift()数组开头删除一个元素，返回被删除的元素
+			//arr.unshift()数组开头添加一个元素或者多个元素，添加后的数组长度
+			//arr.reserve()
+			//arr.indexOf()数组中查找参数的值，返回存在的索引，没有返回-1
+			//arr.splice() 数组截取，从第一个参数索引截取，第二个参数截取个数。返回截取结果
+			//str.charAt()返回当前索引下的值，如果没有返回空
+			//str.charCodeAt() 返回当前索引的ASII编码用来判断键盘的案件，没有返回NAN
+			//.split() 字符转数组 split 字符转数组
+			//.join() 数组转字符串 join 数组转字符
+			//.replace()替换字符串只替换一次
+			let b = {}
+			for(let c = 0;c<arr.length;c++){
+				
+				if(b[arr.charAt(c)]){
+					b[arr.charAt(c)]++
+				}else{
+					b[arr.charAt(c)] = 1
+				}
+			}
+			console.log(b)
+			let max = 1;
+			let maxKey;
+			for(let d in b){
+				if(b[d] > max){
+					max = b[d]
+					maxKey = d
+				}
+			}
+			console.log(max,maxKey)
+		</script>
+	</body>
+</html>
