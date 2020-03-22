@@ -9,8 +9,19 @@
 			let str = 'oooopppppiii';
 			let obj = {}
 			for (let i = 0; i < str.length; i++) {
-
+				obj[str.charAt(i)] = i;
+				
 			}
+			console.log(obj)
+			let max = 0;
+			let maxKey;
+			for(let key in obj){
+				if(obj[key]>max){
+					max = obj[key]
+					maxKey = key
+				}
+			}
+			console.log(max,maxKey)
 		</script>
 	</body>
 </html>

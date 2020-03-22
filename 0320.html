@@ -5,6 +5,7 @@
 		<title></title>
 	</head>
 	<body>
+		<button type="button" id="b1">停止</button>
 		<script type="text/javascript">
 			// let arr = 'iiioooopp';
 			
@@ -19,26 +20,32 @@
 			//str.charCodeAt() 返回当前索引的ASII编码用来判断键盘的案件，没有返回NAN
 			//.split() 字符转数组 split 字符转数组
 			//.join() 数组转字符串 join 数组转字符
-			//.replace()替换字符串只替换一次
-			let b = {}
-			for(let c = 0;c<arr.length;c++){
+			//.replace()替换字符串只替换一次 	
+			// let b = {}
+			// for(let c = 0;c<arr.length;c++){
 				
-				if(b[arr.charAt(c)]){
-					b[arr.charAt(c)]++
-				}else{
-					b[arr.charAt(c)] = 1
-				}
-			}
-			console.log(b)
-			let max = 1;
-			let maxKey;
-			for(let d in b){
-				if(b[d] > max){
-					max = b[d]
-					maxKey = d
-				}
-			}
-			console.log(max,maxKey)
+			// 	if(b[arr.charAt(c)]){
+			// 		b[arr.charAt(c)]++
+			// 	}else{
+			// 		b[arr.charAt(c)] = 1
+			// 	}
+			// }
+			// console.log(b)
+			// let max = 1;
+			// let maxKey;
+			// for(let d in b){
+			// 	if(b[d] > max){
+			// 		max = b[d]
+			// 		maxKey = d
+			// 	}
+			// }
+			// console.log(max,maxKey)
+			let a = setInterval(function (){
+				console.log('b')
+			},100);
+			document.getElementById('b1').addEventListener('click',function(){
+				clearInterval(a)
+			},false)
 		</script>
 	</body>
 </html>
