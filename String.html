@@ -6,22 +6,34 @@
 	</head>
 	<body>
 		<script type="text/javascript">
-			let str = 'oooopppppiii';
-			let obj = {}
-			for (let i = 0; i < str.length; i++) {
-				obj[str.charAt(i)] = i;
+			// let str = 'oooopppppiii';
+			// let obj = {}
+			// for (let i = 0; i < str.length; i++) {
+			// 	obj[str.charAt(i)] = i;
 				
-			}
-			console.log(obj)
-			let max = 0;
-			let maxKey;
-			for(let key in obj){
-				if(obj[key]>max){
-					max = obj[key]
-					maxKey = key
-				}
-			}
-			console.log(max,maxKey)
+			// }
+			// console.log(obj)
+			// let max = 0;
+			// let maxKey;
+			// for(let key in obj){
+			// 	if(obj[key]>max){
+			// 		max = obj[key]
+			// 		maxKey = key
+			// 	}
+			// }
+			// console.log(max,maxKey)
+			//str.charAt('1');接收参数为查找的值，找到返回索引，没有找到返回空。找到就退出
+			//str.charCodeAt('1');接收参数为查找的值，返回acII编码，用于用户键盘事件
+			//str.spilt(',')字符串转数组，参数为分隔符。返回一个新数组
+			//str.substr(start,length)从开始位置查找，length 为长度，截取一个新的字符串，不修改原字符串
+			//str.substring(start,end)从开始位置查找，end为结束索引，截取一个新字符串，不接受负数参数，不修改原字符串
+			//str.slice(start,end)从开始位置查找，end为结束索引，截取一个新字符串，不修改原字符串
+			//str.indexOf('11')接收参数为一个值，返回值为当前值的索引，没有返回-1
+			//str.trim()去除字符串开头结束的空格
+			//str.concat(str1)将两个字符串拼接，返回值为一个新的字符串
+			//str.startsWith(string)判断字符串是否是在原字符串开头出现，返回值boolean
+			//str.endsWith(string)判断字符串是否是在原字符结束出现,返回值boolean
+			//str.repeat(num) 将字符串重复num次，返回新字符串
 		</script>
 	</body>
 </html>

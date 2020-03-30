@@ -174,32 +174,39 @@
 			// mutations
 			// actions	
 			// Getters
-			function deepClone(obj){
-				if(typeof obj !=='object'|| typeof obj == null){
-					return obj
-				}
-				let result;
-				if(obj instanceof Array){
-					obj = []
-				}else{
-					obj = {}
-				}
-				for(let key in obj){
-					if(obj.hasOwnProperty(key)){
-						result[key] = deepClone(obj[key])
-					}
-				}
-				return obj
+			// function deepClone(obj){
+			// 	if(typeof obj !=='object'|| typeof obj == null){
+			// 		return obj
+			// 	}
+			// 	let result;
+			// 	if(obj instanceof Array){
+			// 		obj = []
+			// 	}else{
+			// 		obj = {}
+			// 	}
+			// 	for(let key in obj){
+			// 		if(obj.hasOwnProperty(key)){
+			// 			result[key] = deepClone(obj[key])
+			// 		}
+			// 	}
+			// 	return obj
+			// }
+			// let a = {
+			// 	a1:'22313',
+			// 	a2:{
+			// 		a3:'333333'
+			// 	}
+			// }
+			// let b = deepClone(a);
+			// console.log(b)
+			let obj = {
+				a:1,
+				b:2
 			}
-			let a = {
-				a1:'22313',
-				a2:{
-					a3:'333333'
-				}
+			let obj2 = {
+				c:3,
+				d:4
 			}
-			let b = deepClone(a);
-			console.log(b)
-			
 		</script>
 	</body>
 </html>

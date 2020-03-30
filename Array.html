@@ -6,21 +6,26 @@
 	</head>
 	<body>
 		<script type="text/javascript">
-			// 			let arr = [1, 2, 3, 4, 5]
-			// arr.push(1) //1,2,3,4,5,1 在数组最后添加一个元素,参数一个或者多个，返回数组的长度,改变原数组
-			// arr.unshift(1) //在数组开头添加一个元素，参数一个或多个，返回数组的长度，改变原数组
-			// arr.pop() //数组末尾删除一个元素，不接受参数，返回被删除的元素
-			// arr.shift() //数组开头删除一个元素，不接受参数，返回被删除的元素
-			// arr.reverse() // 翻转数组不接受参数
-			// arr.sort(function(a.b){return a-b}) 数组冒泡排序 参数是一个函数 返回升序排列
-			// arr.sort(function(a,b){return b-a}) 数组冒泡排序 参数是一个函数 返回降序排列
-			// arr.indexOf()  //按照参数的值，数组从前向后查找，找到一次就返回数组索引，否则返回-1
-			// arr.splice() //接收两个参数时，删除从数字的第一个参数为索引，第二个参数为长度的元素，修改原数组，多个于两个参数时，为添加	
-			//arr.forEach(function(currentValue,index,arr)) es5新增， 遍历数组方法 接收一个回调函数第一个
-			//currentValue 当前项的值
-			//index 当前项的索引
-			//arr 数组对象本身
-			// 删除从数字第一个参数为索引，第二个参数为长度的元素，然后在第一个参数为索引添加，第三个及以后参数的元素
+						let arr = [1, 2, 3, 4, 5]
+						let b = arr.indexOf()
+			//arr.push(1,2,3)接收一个或多个参数，在数组最后插入元素，修改原数组。返回原数组
+			//arr.pop()不接受参数，在数组最后删除一个元素，返回被删除的元素，修改原数组
+			//arr.shift(1,2,3)数组开头添加一个或多个元素，修改原数组，返回原数组。
+			//arr.unshift()数组开头删除一个元素，修改原数组，返回被删除的元素。
+			//arr.concat(arr2)将两个数组拼接，返回一个新数组，不修改原数组
+			//arr.splice(start,length,1,2,3),在开始位置截取length个元素返回被截取的元素为一个数组，修改原数组，
+			//如果有多个参数，就是在start位置截取length个元素，并放入多个数组元素
+			//arr.sort(function(a,b){return a-b})数组排序，接收函数为参数a-b为升序，b-a为降序
+			//arr.forEach(function(currentVal,index,arr){})遍历数组，接收回调函数，第一个参数当前元素
+			//第二个参数当前索引，当前数组
+			//arr.filter(function(currentVal,index,arr){return currentVal > 0})遍历数组，返回>0的元素的新数组，不修改原数组
+			//arr.some(function(currentVal,index,arr){})在数组中查找符合条件的元素，找到一个就终止，返回值是一个boolean
+			//arr.find((item,index)=>{})在数组中查找符合函数规则的值，找到就退出，返回的是值
+			//arr.findIndex((item,index)=>{})在数组中查找第一个符合函数的值，参数是函数，找到就退出，返回索引
+			//arr.includes('4')在数组中查找===与参数的值，返回值是boolean，参数是值
+			//arr.reverse()数组翻转,修改原数组
+			//arr.indexOf('1')接收值参数，返回参数在数组中的索引，找到就结束，返回索引，找不到返回-1
+			//arr.join('-')按照参数分隔数组转换成字符串，返回新字符串不修改原数组
 			// let arr = [1, 1, 1, 1, 2, 2, 3, 3, 6, 6, 7, 7];
 			// console.log(arr.toString())
 			// let b;
@@ -32,30 +37,30 @@
 			// }
 			// console.log(arr2)
 			// console.log([...new Set(arr)])
-			let arr = [1, 2, 3, 4, 5, 2, 2, 2];
-			let arr2 = [];
-			arr.forEach(function(val, index, arr) {
-				if (arr2.indexOf(arr[index]) < 0) {
-					arr2.push(arr[index])	
-				}
+			// let arr = [1, 2, 3, 4, 5, 2, 2, 2];
+			// let arr2 = [];
+			// arr.forEach(function(val, index, arr) {
+			// 	if (arr2.indexOf(arr[index]) < 0) {
+			// 		arr2.push(arr[index])	
+			// 	}
 
-			})
-			let arr3 = arr.filter(function(val, index, arr) {
-				// console.log(arr)
-				return val >= 3;
-			})
-			console.log(arr3)
-			let bol = arr.some(function(val,index,arr){
-				return val >5 
-			})
-			console.log(bol)
-			// let bbb = arr.join('-')
-			let obj = {
-				a:1,
-				b:2,
-				c:3
-			}
-			Object.keys(obj)	
+			// })
+			// let arr3 = arr.filter(function(val, index, arr) {
+			// 	// console.log(arr)
+			// 	return val >= 3;
+			// })
+			// console.log(arr3)
+			// let bol = arr.some(function(val,index,arr){
+			// 	return val >5 
+			// })
+			// console.log(bol)
+			// // let bbb = arr.join('-')
+			// let obj = {
+			// 	a:1,
+			// 	b:2,
+			// 	c:3
+			// }
+			// Object.keys(obj)	
 		</script>
 	</body>
 </html>
