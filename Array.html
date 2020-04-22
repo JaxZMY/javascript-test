@@ -5,62 +5,70 @@
 		<title></title>
 	</head>
 	<body>
+		<div id="">
+			arr.push()
+			参数可以是一个或者多个
+			在数组末尾添加元素
+			添加的值可以一个或者多个
+			返回值是数组的长度
+			改变原数组
+			arr.unshift()
+			参数可以是一个或者多个
+			在数组开头添加元素
+			添加的值可以是一个或者多个
+			返回值是数组的长度
+			改变原数组
+			arr.pop()
+			不接受参数
+			删除数组最后一个元素
+			返回值是被删除的元素
+			改变原数组
+			arr.shift()
+			不接受参数
+			删除数组的第一个元素
+			返回值是被删除的元素
+			改变原数组
+			arr.reverse()
+			翻转数组
+			arr.sort()
+			冒泡排序
+			降序
+			arr.sort(function(a,b){
+			                return b-a
+			            })
+			升序
+			arr.sort(function(a,b){
+			                return a-b
+			            })
+			arr.indexof()
+			参数1 查找的字符，参数2 开始的位置
+			从前向后查找
+			返回数组索引，只返回第一个
+			如果没有返回-1
+			arr.lastindexOf()
+			从后向前查找
+			arr.toString()
+			数组转字符串,号分隔
+			
+			arr.join()
+			数组转字符串，参数为字符串，按照参数为分隔符 返回一个新的字符串，不会修改原数组
+			arr.forEach(function(currentValue,index,arr){})
+			数组遍历方法，接收一个回调函数，回调函数第一个参数当前值，第二个参数当前索引，第三个参数数组本身 没有返回值
+			arr.filter(function(currentValue,index,arr){})
+			查找数组中符合条件的所有元素，接收一个回调函数，回调函数第一个参数当前值，第二个参数当前索引，第三个参数数组本身 返回值是一个新数组
+			arr.some(function(currentValue,index,arr){})
+			查找数组中是否有满足条件的元素
+			找到这个元素就停止循环返回true，否则就返回false
+			返回值是一个boolen
+			arr.find((item,index)=>{})在数组中查找第一个符合函数规则的值，找到就退出，返回的是值
+			arr.findIndex((item,index)=>{})在数组中查找第一个符合函数条件的值，找到就退出，返回的是索引
+			arr.includes('4')在数组中查找===与参数的值，返回值是boolean，参数是值
+			
+		</div>
 		<script type="text/javascript">
 						let arr = [1, 2, 3, 4, 5]
 						let b = arr.indexOf()
-			//arr.push(1,2,3)接收一个或多个参数，在数组最后插入元素，修改原数组。返回原数组
-			//arr.pop()不接受参数，在数组最后删除一个元素，返回被删除的元素，修改原数组
-			//arr.shift(1,2,3)数组开头添加一个或多个元素，修改原数组，返回原数组。
-			//arr.unshift()数组开头删除一个元素，修改原数组，返回被删除的元素。
-			//arr.concat(arr2)将两个数组拼接，返回一个新数组，不修改原数组
-			//arr.splice(start,length,1,2,3),在开始位置截取length个元素返回被截取的元素为一个数组，修改原数组，
-			//如果有多个参数，就是在start位置截取length个元素，并放入多个数组元素
-			//arr.sort(function(a,b){return a-b})数组排序，接收函数为参数a-b为升序，b-a为降序
-			//arr.forEach(function(currentVal,index,arr){})遍历数组，接收回调函数，第一个参数当前元素
-			//第二个参数当前索引，当前数组
-			//arr.filter(function(currentVal,index,arr){return currentVal > 0})遍历数组，返回>0的元素的新数组，不修改原数组
-			//arr.some(function(currentVal,index,arr){})在数组中查找符合条件的元素，找到一个就终止，返回值是一个boolean
-			//arr.find((item,index)=>{})在数组中查找符合函数规则的值，找到就退出，返回的是值
-			//arr.findIndex((item,index)=>{})在数组中查找第一个符合函数的值，参数是函数，找到就退出，返回索引
-			//arr.includes('4')在数组中查找===与参数的值，返回值是boolean，参数是值
-			//arr.reverse()数组翻转,修改原数组
-			//arr.indexOf('1')接收值参数，返回参数在数组中的索引，找到就结束，返回索引，找不到返回-1
-			//arr.join('-')按照参数分隔数组转换成字符串，返回新字符串不修改原数组
-			// let arr = [1, 1, 1, 1, 2, 2, 3, 3, 6, 6, 7, 7];
-			// console.log(arr.toString())
-			// let b;
-			// let arr2 = [];
-			// for (let i = 0; i < arr.length; i++) {
-			// 	if (arr2.indexOf(arr[i])<0) {
-			// 		arr2.push(arr[i])
-			// 	}
-			// }
-			// console.log(arr2)
-			// console.log([...new Set(arr)])
-			// let arr = [1, 2, 3, 4, 5, 2, 2, 2];
-			// let arr2 = [];
-			// arr.forEach(function(val, index, arr) {
-			// 	if (arr2.indexOf(arr[index]) < 0) {
-			// 		arr2.push(arr[index])	
-			// 	}
-
-			// })
-			// let arr3 = arr.filter(function(val, index, arr) {
-			// 	// console.log(arr)
-			// 	return val >= 3;
-			// })
-			// console.log(arr3)
-			// let bol = arr.some(function(val,index,arr){
-			// 	return val >5 
-			// })
-			// console.log(bol)
-			// // let bbb = arr.join('-')
-			// let obj = {
-			// 	a:1,
-			// 	b:2,
-			// 	c:3
-			// }
-			// Object.keys(obj)	
+			
 		</script>
 	</body>
 </html>

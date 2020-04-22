@@ -1,0 +1,61 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="author" content="http://www.softwhy.com/" />
+		<title>蚂蚁部落</title>
+		<style>
+			.box {
+				margin: 80px 30px;
+				width: 200px;
+				height: 200px;
+				position: relative;
+				background: #fff;
+				float: left;
+			}
+
+			.box:before {
+				content: '';
+				z-index: -1;
+				position: absolute;
+				width: 220px;
+				height: 220px;
+				top: -10px;
+				left: -10px;
+			}
+
+			.first:before {
+				background-image: linear-gradient(90deg, yellow, gold);
+			}
+
+			.second:before {
+				background: radial-gradient(circle at center center, rgba(23, 48, 78, 1), rgba(20, 37, 63, 1)),
+					linear-gradient(rgba(179, 224, 255, 0.62), rgba(179, 224, 255, 0.62)) left top,
+					linear-gradient(rgba(179, 224, 255, 0.62), rgba(179, 224, 255, 0.62)) left top,
+					linear-gradient(rgba(179, 224, 255, 0.62), rgba(179, 224, 255, 0.62)) right top,
+					linear-gradient(rgba(179, 224, 255, 0.62), rgba(179, 224, 255, 0.62)) right top,
+					linear-gradient(rgba(179, 224, 255, 0.62), rgba(179, 224, 255, 0.62)) left bottom,
+					linear-gradient(rgba(179, 224, 255, 0.62), rgba(179, 224, 255, 0.62)) left bottom,
+					linear-gradient(rgba(179, 224, 255, 0.62), rgba(179, 224, 255, 0.62)) right bottom,
+					linear-gradient(rgba(179, 224, 255, 0.62), rgba(179, 224, 255, 0.62)) right bottom,
+					linear-gradient(rgba(56, 144, 184, 0.60), rgba(56, 144, 184, 0.60)) top,
+					linear-gradient(rgba(26, 87, 130, 0.60), rgba(26, 87, 130, 0.60)) bottom,
+					linear-gradient(rgba(56, 144, 184, 0.60), rgba(219, 240, 255, 0.80), rgba(26, 87, 130, 0.60)) left,
+					linear-gradient(rgba(56, 144, 184, 0.60), rgba(219, 240, 255, 0.80), rgba(26, 87, 130, 0.60)) right;
+				background-repeat: no-repeat;
+				background-position: 1px 1px, 0px 0px, 0px 0px, 0px 100%, 0px 100%, 100% 0px, 100% 0px, 100% 100%, 100% 100%, 0px 0px, 0px 100%, 0px 100%, 100% 100%;
+				background-size: calc(100% - 2px) calc(100% - 2px), 1px 10px, 10px 1px, 1px 10px, 10px 1px, 1px 10px, 10px 1px, 1px 10px, 10px 1px, 100% 1px, 100% 1px, 1px 100%, 1px 100%;
+
+			}
+
+			.third:before {
+				background-image: repeating-linear-gradient(-45deg, #cc2a2d, #cc2a2d 30px, #f2f2f2 30px, #f2f2f2 40px, #0e71bb 40px, #0e71bb 70px, #f2f2f2 70px, #f2f2f2 80px);
+			}
+		</style>
+	</head>
+	<body>
+		<div class="box first"></div>
+		<div class="box second"></div>
+		<div class="box third"></div>
+	</body>
+</html>

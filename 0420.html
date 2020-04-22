@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			function deepClone(obj) {
+				if (typeof obj !== 'object' || obj == null) {
+					return obj
+				}
+				let result;
+				if (obj instanceof Array) {
+					result = []
+				} else {
+					result = {}
+				}
+				for (let key in obj) {
+					if (obj.hasOwnProperty(key)) {
+						result[key] = deepClone(obj[key])
+					}
+				}
+				return result
+			}
+			let a = {
+				name: '123',
+				age: 18,
+				project: [1, 2, 3]
+			}
+			let b = deepClone(a)
+			console.log(b)
+
+			function getMax() {
+				let arr = [...arguments];
+				let b = 0;
+				arr.forEach((val, index) => {
+					if(val > b){
+						b = val;
+					}
+				})
+				return console.log(b)
+			}
+			getMax(1, 2, 3,444,222,0)
+		</script>
+	</body>
+</html>

@@ -6,29 +6,66 @@
 	</head>
 	<body>
 		<script type="text/javascript">
-			let a = {
-				x:1,
-				y:[{z:1},2,3]
-			}
-			let deepClone = (obj)=>{
-				if(typeof obj !== "object" || typeof obj == null){
-					return obj
-				}
-				let result;
-				if(obj instanceof Array){
-					result = []
-				}{
-					result = {}
-				}
-				for(let key in obj){
-					if(obj.hasOwnProperty(key)){
-						result[key] = deepClone(obj[key])
+			// arr instancesof Array  //判断是数组
+			// arr.push() 在数组末尾添加一个或多个元素，返回数组的长度
+			// arr.pop() 在数组末尾删除一个元素 返回被删除的元素，
+			//arr.shift()在数组开头删除一个元素，返回被删除的元素 ,返回数组的长度
+			//arr.unshift()数组开头添加一个或者多个元素，修改原数组
+			//arr.indexOf('元素',start) 在start位置开始查找元素 返回索引，未找到返回-1
+			// let o = 'aaabbbbccccc';
+			// let b = {};
+			// for (i = 0; i < o.length; i++) {
+
+			// }
+			//数组去重，遍历旧数组，用旧数组元素查询新数组，如果没有就添加到新数组，如果有就略过.
+			let arr = [1, 23, 1, 1, 1, 3, 23, 5, 6, 7, 9, 9, 8, 5];
+
+			function unique(arr) {
+				for (var i = 0; i < arr.length; i++) {
+					for (var j = i + 1; j < arr.length; j++) {
+						if (arr[i] == arr[j]) { //第一个等同于第二个，splice方法删除第二个
+							arr.splice(j, 1);
+							j--;
+						}
 					}
 				}
-				return result
+				return arr;
 			}
-			let b = deepClone(a)
-			
+
+
+			function unique(arr) {
+				for (var i = 0; i < arr.length; i++) {
+					for (var j = i + 1; j < arr.length; j++) {
+						if (arr[i] == arr[j]) {
+							arr.splice(j, 1);
+							j--
+						}
+					}
+				}
+			}
+			unique(arr)
+			let arr2 = [1, 23, 1, 1, 1, 3, 23, 5, 6, 7, 9, 9, 8, 5];
+			function norepeat(arr){
+				var temp = [];
+				for(var i = 0;i<arr.length;i++){
+					if(temp.indexOf(arr[i]) == -1){
+						temp.push(arr[i])
+					}
+				}
+				return temp
+			}
+			let arr3 = norepeat(arr2)
+			// console.log(arr.indexOf('sss',1))
+			// //数组查找元素，找到后返回索引，第二个参数为起始位置
+			// let b = arr.unshift('222','3333')
+			// let c = arr.push('9')
+			// console.log(c)
+			// let d = arr.join('-') //数组转字符串，参数为分隔符
+			// console.log(d)
+			// arr.forEach((val,curindex,arr)=>{}) 遍历数组，没有返回值,三个参数第一个当前值，第二个当前索引，第三个数组元素
+			// arr.forEach((val,curindex,arr)=>{
+			// 	arr[curindex] = val +"月"
+			// })
 		</script>
 	</body>
 </html>
